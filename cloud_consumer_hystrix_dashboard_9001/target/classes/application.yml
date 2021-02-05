@@ -1,0 +1,14 @@
+server:
+  port: 9001
+
+
+spring:
+  application:
+    #巨坑 该处名称不能用下划线，否则在远程调用服务时候找不到路径，报错如下 Request URI does not contain a valid hostname
+    name: hystrix-dashboard-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://139.224.228.145:3307/cloud2021?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456

@@ -1,0 +1,33 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: feign-order-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://139.224.228.145:3307/cloud2021?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    #表示将自己注册到注册中心
+    register-with-eureka: true
+    #是否从eureka server抓取已有的注册信息，默认为true，单节点无所谓，集群必须为true，配合ribbon进行负载均衡
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+#设置feign客户端超时时间(openfeign默认支持ribbon)
+ribbon:
+  #指的是简历连接所需要的时间，适用于网络情况正常的情况下，两端连接所需要的时间
+  ReadTimeout: 5000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000
+logging:
+  level:
+    #feign以什么级别监听哪一个接口
+    com.zy.springcloud.Service.PaymentFeignService: debug
