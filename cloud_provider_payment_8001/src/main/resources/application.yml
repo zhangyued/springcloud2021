@@ -5,6 +5,12 @@ spring:
   application:
     #巨坑 该处名称不能用下划线，否则在远程调用服务时候找不到路径，报错如下 Request URI does not contain a valid hostname
     name: cloud-payment-service
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      #采样率值介于0到1之间，1表示全部采集
+      probability: 1
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
