@@ -21,7 +21,7 @@
       <module>cloud_consumer_order_feign_hystrix_80</module>
       <module>cloud_consumer_hystrix_dashboard_9001</module>
       <module>cloud_gateway_9527</module>
-    <module>cloud_provider_payment_alibaba_9001</module>
+      <module>cloud_provider_payment_alibaba_9001</module>
       <module>cloud_provider_payment_alibaba_9002</module>
       <module>cloud_consumer_order_alibaba_80</module>
       <module>cloud_config_nacos_client_alibaba_3377</module>
